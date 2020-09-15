@@ -1,9 +1,5 @@
 const notes = require("./notes.js") // importing file
-const chalk = require("chalk")
 const yargs = require("yargs")
-
-// const success = chalk.bold.green.inverse;
-// console.log(success("Success!"))
 
 // Create add command
 yargs.command ({
@@ -47,7 +43,7 @@ yargs.command({
     command: "list",
     describe: "List all the notes",
     handler: function() {
-        console.log("Listing all the notes..")
+        notes.listNotes()
     }
 })
 
@@ -57,14 +53,14 @@ yargs.command({
     describe: "Reads the notes present",
     builder: {
         title :{
-            describe: "Note title"
+            describe: "Note title",
+            demandOption: true,
+            type: "string"
         }
     },
-    handler: function () {
-        console.log("Reading the notes..")
+    handler: function (argv) {
+        notes.readNotes(argv.title)
     }
 })
 
 yargs.parse()
-// Customize the version to be used
-//console.log(yargs.argv)
