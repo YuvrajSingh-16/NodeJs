@@ -13,7 +13,7 @@ yargs.command ({
         title: {
             describe: "Note title",  // brief about the title option
             demandOption: true,  // making title a must argument
-            type: 'string'  // specifying the data type for the title
+            type: 'string'  // specifying specific data type for the title
         },
         body: {
             describe: "Note body",
@@ -30,8 +30,15 @@ yargs.command ({
 yargs.command({
     command: 'remove',
     describe: "Remove a note",
-    handler: function(){
-        console.log("Removing a note!")
+    builder: {
+        title : {
+            describe: "Title",
+            demandOption: true,
+            type: "string"
+        }
+    },
+    handler: function(argv){
+        notes.removeNote(argv.title)
     }
 })
 
