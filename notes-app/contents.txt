@@ -1,0 +1,6 @@
+1. Creating and printing constant
+2. Importing Node.js core modules [require('module_name')]
+3. Creating and using function
+4. Importing your own files(.js files) [require('./your_file.js')]
+5. Importing npm modules(install first) [require('npm_moduleName')]
+6. Installing npm modules globally i.e, to use them in command line (nodemon)
