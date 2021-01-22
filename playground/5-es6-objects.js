@@ -1,4 +1,4 @@
-const name = "Mayank"
+const name = "UVSinghk"
 const UserAge = 19
 
 const user = {
